@@ -1,0 +1,68 @@
+
+
+
+<<for in list 문>>
+
+(형식)
+for pattern in patterns:
+    print(pattern)
+
+=> patterns의 값을 하나씩 꺼내서 pattern으로 대입하여 밑의 문장을 실행하는것!
+
+ex)
+
+patterns = [1,2,3,4,5]
+for pattern in patterns:
+    print(pattern)
+
+=> 
+1
+2
+3
+4
+5
+
+이렇게 실행된다!
+
+
+=>리스트의 크기에 상관없이 리스트의 값들에게 모두 어떤 작업을 해줘야 할때 용이하다!
+=========================================================
+
+<<for in range 문>>
+
+=> 원하는횟수만큼 반복하는것! for in list는 전체를 다 반복하는것! 서로 이게 차이점!
+
+ex)
+for i in range(10):
+    print(i)
+
+=> 0부터 9까지의 수가 i에 차례차례 들어간다.
+
+ex2)
+list = ['철수','영희','지환','세현']
+for i in range(len(list)):
+    print('{}번 : {}'.format(i+1,list[i]))
+
+=> 학생들에게 번호를 붙여줄수있다.
+
+ex3)
+
+<<enumerate>>
+
+
+=> enumerate는 리스트가 있는 경우 '순서'와 '리스트의 값'을 전달하는 기능을 합니다. 
+아래의 예를 참고하여 문제를 해결해 보세요.
+
+names = ['철수', '영희', '영수']
+for i, name in enumerate(names):
+    print('{}번 : {}'.format(i + 1, name))
+
+이 예제의 출력값은 아래와 같습니다.
+
+1번 : 철수
+2번 : 영희
+3번 : 영수
+=========================================================
+
+for in list : 순회할 리스트가 정해져 있을떄
+for in range(): 순회할 횟수가 정해져 있을때, 1씩 증가하는 숫자가 필요할때

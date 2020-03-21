@@ -1,0 +1,28 @@
+<<break,continue>>
+
+
+
+-> break : break가 포함된 상위 '반복문' '한'개를 탈출!.. 반복문을 종료시킴
+-> continue:  반복문의 나머지 부분을 보지 않고 반복문의 처음으로 돌아간다!
+
+ex)) 
+
+
+list = [1,2,3,5,7,2,4,237,55]
+
+1)
+for i in range(10):
+    if i%2==0:
+        continue
+    print(i)
+    print(i)
+    print(i)
+    
+2) 
+for i in range(10)
+    if i%2 !=0 :
+        print(i)
+        print(i)
+        print(i)
+
+>> 1)번과 2)번은 같은 출력 결과가 나옴!!!!!

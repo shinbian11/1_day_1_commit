@@ -1,0 +1,63 @@
+<<클래스,인스턴스>>
+
+[클래스]
+> 함수나 변수들을 모아 놓은 집합체
+
+[인스턴스]
+> 클래스에 의해 생성된 객체
+> 인스턴스 각자 자신의 값을 가지고 있다.
+
+=> 클래스가 붕어빵 틀, 인스턴스(객체)는 그 틀로 찍어내는 붕어빵!
+
+
+<<is연산>> : 같은 인스턴스인지 알아볼수있음!
+->사용법:  if(list1 is list2) : list1과 list2가 같은 인스턴스인지? 라고 묻는 문장!
+
+ex) 
+list1 = [1,2,3]
+list2 = [1,2,3]일때,
+
+list1과 list2의 값은 같지만(list1 == list2)
+list1과 list2는 같은 인스턴스는 아닙니다.(if list1 is list2  => false)
+----------------------------------------------------------------------------------------------------
+<<클래스 만들기>>
+
+구조 :  class 클래스명(): 
+
+> 클래스와 인스턴스를 이용하면 데이터와 코드를 사람이 이해하기 쉽게 포장가능!
+> 클래스에 함수도 넣을수있음!
+
+
+
+ex)
+
+class Human():
+    '''사람'''
+    
+person1 = Human()  #Human의 인스턴스가 person1에 저장됨
+person2 = Human()  #Human의 인스턴스가 person2에 저장됨
+
+person1.language = '한국어'
+person2.language= 'English'
+
+person1.name = '서울시민'
+person2.name = '인도인'
+
+def speak(person):
+    print("{}이 {}로 말을 합니다.".format(person.name,person.language))
+   
+   
+Human.speak = speak #Human 클래스에 speak함수를 넣었으므로,
+#Human의 인스턴스인 person1,person2에서도 speak함수의 능력을 가지게된다! 즉.. 아래처럼 가능!
+
+person1.speak()  #서울시민이 한국어로 말을 합니다.
+person2.speak()  #인도인이 English로 말을 합니다.
+-------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

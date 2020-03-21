@@ -1,0 +1,79 @@
+<<상속(Inheritance)>>
+
+> 상속하는 클래스를 부모 클래스
+> 상속받는 클래스를 자식 클래스
+> 자식 클래스가 부모 클래스의 내용을 가져다 쓸 수 있는 것
+-----------------------------------------------------
+ex)
+
+
+class Animal():
+    def walk(self):
+        print("걷는다")
+    
+    def eat(self):
+        print("먹는다")
+        
+class Human(Animal): #상속 하는 법: 클래스의 괄호 안에 부모 클래스의 이름을 적는다
+    def wave(self):
+        print("손을 흔든다")
+
+class Dog(Animal): #Human,Dog 클래스는 Animal 클래스의 메서드를 사용가능하다.
+    def wag(self):
+        print("꼬리를 흔든다")
+    
+person = Human()
+person.walk() #걷는다
+person.eat() #먹는다
+person.wave() #손을 흔든다
+
+
+dog = Dog()
+dog.walk() #걷는다
+dog.eat()  #먹는다
+dog.wag()  #꼬리를 흔든다
+-------------------------------------------------------------------------------------------------------
+<<단순 오버라이드>>
+
+-> 같은 이름을 가진 메서드를 덮어 쓴다는 의미!
+
+ex)
+
+class Animal():
+    def walk(self):
+        print("걷는다")
+    def eat(self):
+        print("먹는다")
+    def greet(self):
+        print("인사한다")
+
+class Cow(Animal):
+    '''소'''
+class Person(Animal): #상속 하는 법: 클래스의 괄호 안에 부모 클래스의 이름을 적는다
+    def wave(self):
+        print("손을 흔든다")
+        
+    def greet(self):
+        self.wave()
+
+class Dog(Animal): #Human,Dog 클래스는 Animal 클래스의 메서드를 사용가능하다.
+    def wag(self):
+        print("꼬리를 흔든다")
+    def greet(self):
+        self.wag()
+        
+person = Person()
+person.greet() #손을 흔든다 
+
+dog = Dog()
+dog.greet() #꼬리를 흔든다
+
+cow = Cow()
+cow.greet()  #인사한다
+      
+# 설명:  Person과 Dog는 Animal을 상속하고 있다. 부모 클래스인 Animal에도 greet가 있고,
+# Person과 Dog에도 greet가 있다. 하지만 Cow에는 greet가 없다.
+# 즉, Person과 Dog는 오버라이드가 가능하여 Animal의 greet가 아닌 본인들의 greet를 실행하지만
+# Cow는 본인의 greet가 없으므로 상속하고 있는 Animal의 greet를 실행한다.
+        
+ 

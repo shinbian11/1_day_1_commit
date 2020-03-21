@@ -1,0 +1,40 @@
+<<datetime 모듈>>
+
+> 날짜와 시간을 사용하게 해주는 라이브러리
+
+ex)
+import datetime 
+print(datetime.datetime.now()) #현재시간
+
+start_time = datetime.datetime.now()
+print(type(start_time))
+
+start_time = start_time.replace(year = 2100, month = 10,day = 1) #값을 수정
+print(start_time)
+
+start_time = datetime.datetime(2100,3,1)
+print(start_time)
+
+how_long = start_time-datetime.datetime.now()
+print(how_long)
+print(how_long.days)
+print(how_long.seconds)
+print("2100년 3월 1일까지는 {}일 {}시간이 남았습니다.".format(how_long.days,how_long.seconds//3600))
+-------------------------------------------------------------------------------------------------
+<<timedelta>>
+
+> 시간의 '연산'을 가능하게 해주는 클래스
+
+ex)
+
+import datetime
+
+hundred = datetime.timedelta(days=100)
+print(datetime.datetime.now() + hundred) #지금부터 100일 이후가 출력
+
+hundred = datetime.timedelta(days=100)
+print(datetime.datetime.now() - hundred) #지금부터 100일전이 출력
+
+
+tomorrow = datetime.datetime.now().replace(hour = 9,minute = 0,second = 0)+datetime.timedelta(days=1)
+print(tomorrow) #내일 오전 9시를 출력

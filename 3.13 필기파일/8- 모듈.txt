@@ -1,0 +1,77 @@
+<<< 모듈 : 다른 기능을 가져다 쓰는것! >>>
+
+=> 미리 만들어진 코드를 가져와 쓰는방법
+=> import <모듈이름>
+=> <모듈이름>.<모듈안의 구성요소>
+
+(모듈 예시 3가지)
+
+> import math  : 수학 관련 모듈
+
+math.pi : 파이값
+math.ceil() : 올림
+math.floor() : 내림
+
+> import random : 무작위 관련 모듈
+
+ex)
+
+import random
+candidates = [1,2,3,4,5]
+a = random.choice(candidates)
+print(a)
+
+=>1,2,3,4,5가 랜덤으로 출력!
+
+> 인터넷의 내용을 가져오는 모듈
+
+def get_web(url):
+    '''url을 넣으면 페이지 내용을 돌려주는 함수'''
+    import urllib.request
+    reponse = urllib.request.urlopen(url)
+    data = response.read()
+    decoded = data.decode('utf-8')
+    return decoded
+    
+url = input('웹 페이지 주소는? ')
+content = get_web(url)
+print(content)
+
+================================================================
+<내가 직접 모듈을 만들어 쓰기>
+
+my_module이라는 파일에
+
+def random_rsp():
+    import random
+    return random.choice(['가위','바위','보'])
+
+
+PAPER = '보'
+SCISSOR = '가위'
+ROCK = '바위'
+
+이 함수 만들어놓고, 다른 파일에서 이 모듈을 꺼내쓰려면... 다른 파일에서 이렇게 작성!
+
+import my_module
+
+selected = my_module.random_rsp()
+print(selected)
+print('가위?', my_module.SCISSOR == selected)
+
+=>이떄 my_module은 내가 쓰고자 하는 모듈이 있는 파일 이름! 
+이렇게 작성하면 랜덤으로 나오는 것과 가위가 같으면 true, 아니면 false가 출력될것!
+
+출력 ex)
+가위
+가위? True
+
+출력 ex2)
+보
+가위? False
+================================================================
+*****
+주의점)) 파이썬에서 제공하는 모듈과 달리, 내가 만든 모듈은 만든 모듈과 만든 모듈을 사용할 파일이
+같은 폴더 안에 있어야 한다!!!! 즉 my_module.py 와 이 모듈을 사용하는 파일이 같은 폴더에 있어야 한다!
+
+   

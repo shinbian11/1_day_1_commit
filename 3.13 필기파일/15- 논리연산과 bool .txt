@@ -1,0 +1,80 @@
+<<<논리 연산 더 알아보기>>>
+
+ex)
+def return_false():
+    print("함수 return_false")
+    return False;
+    
+def return_true():
+    print("함수 return_true")
+    return True;
+
+
+print("테스트1")
+a= return_false()
+b = return_true()
+if a and b:
+    print(True)
+else:
+    print(False)
+#함수 return_false
+#함수 return_true
+
+#-------------------------
+
+print("테스트2")
+if return_false() and return_true():
+    print(True)
+else:
+    print(False)
+    
+    #함수 return_false만 출력..왜?
+    #return_false()함수를 실행할때 이미 if문의 조건식이 거짓이므로 뒤에건 실행 안하니까!
+
+#--------------------------------------------------------------------------------
+ex2)
+
+
+def return_true():
+    print("truetrue")
+    return True
+
+def return_false():
+    print("falsefalse")   
+    return False
+
+#이 상황에서도 return_true()가 true이므로 if문 조건식은 무조건 참! 뒤에건 실행 안됨!
+if return_true() or return_false():  
+    print("실행")
+else:
+    print("노 실행")
+
+#truetrue
+#실행
+=============================================================
+<<bool값과 논리연산>>
+
+숫자 0을 제외한 모든 수 - true
+빈 딕셔너리, 빈 리스트를 제외한 모든 딕셔너리, 리스트 - true
+아무 값도 없다는 의미인 None - false
+빈문자열을 제외한 모든 문자열 - true
+--------------------------------------------------------------------------
+ex)
+
+
+value = input('입력해주세요>') or '아무것도 못 받았어'
+print('입력받은 값> ',value)
+
+#입력을 하면 입력한 값이 출력
+#입력 안하면 '아무것도 못 받았어'가 출력
+# 입력을 하면 무조건 input부분이 true이므로 뒤에는 볼 것도 없이 앞의 값이 value가 된다!
+# 입력을 안하면 무조건 input부분이 false이므로 뒤에 값이 곧 value가 된다!
+--------------------------------------------------------------------------
+ex2)
+
+a = 1 or 10   # a는 1이다
+b = 0 or 10   #b는 10이다
+
+
+print("a:{}, b:{}".format(a, b))
+

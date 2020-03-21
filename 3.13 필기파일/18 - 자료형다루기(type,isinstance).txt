@@ -1,0 +1,30 @@
+<<자료형 다루기>> : type, isinstance에 대해
+=> 모든 파이썬 변수에는 자료형이 있다.
+-----------------------------------------------------------------------------------------------------
+>>1.  type(변수명) # 그 변수명의 자료형이 나온다
+
+ex)
+f= 3.14
+type(f)   #float
+
+
+ex2)
+my_list = [1, 2, 3]
+my_dict = {"풀": 800, "색연필": 3000}
+my_tuple = (1, 2, 3)
+number = 10
+real_number = 3.141592
+
+print(type(my_list)) #list
+print(type(my_dict))  #dict
+print(type(my_tuple))  #tuple
+print(type(number))  #int
+print(type(real_number))   #float
+-----------------------------------------------------------------------------------------------------
+>>2.  isinstance(값,자료형) : 그 값이 그 자료형이 맞는지 검사
+
+ex)
+isinstance(42,int)  #42는 int형이므로 true
+isinstance(42,float)  #42는 float형이 아니므로 false
+===============================================================
+
