@@ -1,3 +1,4 @@
+#파이썬으로 연결리스트 구현 따라하기!!
 class Node:
     def __init__(self, data, next = None):
         self.data = data
