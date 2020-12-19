@@ -1,0 +1,19 @@
+<ML lec 02 - Linear Regression의 Hypothesis 와 cost 설명 - 필기>
+
+> supervised learning : label 데이터를 가지고 학습시키는 것
+
+<공부시간과 점수 예측 프로그램>
+- regression : 0~100 점수값 예측
+- binary classification : pass / fail 예측
+- multi-label classification : A,B,C,D,E,F 예측
+
+
+> which hypothesis is better?
+ - 그래프와 데이터들의 거리가 가까울수록 좋은 것!
+- 그 거리를 측정하는 방법 : cost function(loss function) 
+> 데이터 한개의 거리 측정 : (H(x)-y)^2 : 그래프와 해당 데이터의 거리(y값의 차이)에 제곱을 한다.
+-  거리의 제곱을 했을때 이점 : 값이 음수 안나옴, 거리가 멀수록 패널티 확실하게 적용 가능.
+
+> (H(x)-y)^2 를 데이터 개수만큼(i=1~i=m) 모두 더한 다음, 데이터 개수(m)로 나눈것이 cost function (거리들의 평균)
+=> H(x) = wx+b인데, 이 cost function 은 결국 w,b에 대한 식이고
+=> 이 값(거리들의 평균)이 작을수록 정확하고 좋은 것! 작게 만드는 것이 학습이다.
